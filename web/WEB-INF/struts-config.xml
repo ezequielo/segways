@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="RegistroForm" type="com.myapp.struts.RegistroForm"/>
         <form-bean name="LoginForm" type="com.myapp.struts.LoginForm"/>
     </form-beans>
     
@@ -23,6 +24,11 @@
             <forward name="success" path="/WEB-INF/principal.jsp"/>
             <forward name="failure" path="/Welcome.do"/>
         </action>
+        
+        <action input="/registro.jsp" name="RegistroForm" path="/Registro" scope="request" type="com.myapp.struts.RegistroAction">
+            <forward name="success" path="/Welcome.do" redirect="true"/>
+        </action>
+        
         <action path="/Welcome" forward="/login.jsp"/>
     </action-mappings>
     

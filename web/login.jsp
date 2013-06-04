@@ -19,6 +19,7 @@
                 <tr><td><label>Username:</label></td><td><html:text property="usuario"/></td></tr>
                 <tr><td><label>Password:</label></td><td><html:password property="password"/></td></tr>
                 <tr><td colspan="2"><html:submit value="Login"/></td></tr>
+                <tr><td colspan="2"><a href="registro.jsp">Crearme una cuenta!</a></td></tr>
             </table>
         </html:form>
     </body>
