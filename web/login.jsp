@@ -11,17 +11,15 @@
         <title><bean:message key="welcome.title"/></title>
         <html:base/>
     </head>
-    <body style="background-color: white">
-        
-        <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
-            <div  style="color: red">
-                ERROR:  Application resources not loaded -- check servlet container
-                logs for error messages.
-            </div>
-        </logic:notPresent>
-        
-        <h3><bean:message key="welcome.heading"/></h3>
-        <p><bean:message key="welcome.message"/></p>
-        
+    <body>
+        <h1>LOGIN</h1>
+        <html:form action="/Login">
+            <table>
+                <tr><td colspan="2"><bean:write name="LoginForm" property="message" /></td></tr>
+                <tr><td><label>Username:</label></td><td><html:text property="usuario"/></td></tr>
+                <tr><td><label>Password:</label></td><td><html:password property="password"/></td></tr>
+                <tr><td colspan="2"><html:submit value="Login"/></td></tr>
+            </table>
+        </html:form>
     </body>
 </html:html>

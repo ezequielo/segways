@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-jun-2013 17:05:56 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Clientes" table="clientes" catalog="segways">
+        <id name="pkCliente" type="java.lang.Integer">
+            <column name="pk_cliente" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuarios" class="hibernate.Usuarios" fetch="select">
+            <column name="pk_usuario" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="apellido1" type="string">
+            <column name="apellido_1" length="45" not-null="true" />
+        </property>
+        <property name="apellido2" type="string">
+            <column name="apellido_2" length="45" not-null="true" />
+        </property>
+        <property name="ident" type="string">
+            <column name="ident" length="45" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="150" not-null="true" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="100" not-null="true" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="100" not-null="true" />
+        </property>
+        <property name="cp" type="string">
+            <column name="cp" length="20" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="45" not-null="true" />
+        </property>
+        <property name="pais" type="string">
+            <column name="pais" length="100" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
