@@ -1,0 +1,41 @@
+
+
+body { 
+    background-color: #fff;
+    font-family: "Segoe UI", "Segoe UI Web Regular", "Segoe UI Symbol", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, "sans-serif";
+    color: #000;
+    direction: ltr;
+    font-size: 80%;
+}
+
+a.link{
+    font-weight: inherit;
+    text-decoration: none;
+    color: #2672EC;
+    cursor: pointer;
+}
+
+a.link:hover {
+    color: #338ED1;
+}
+
+input[type=button].default, input[type=submit].default, button.default{
+    background-color: #1E82CC;
+    color: #fff;
+    padding: 3px 12px 5px;
+    border: 0px;
+    height: 2.142em;
+    min-width: 6em;
+    font-weight: bolder;
+}
+
+input[type=button]:hover.default, input[type=submit]:hover.default, button:hover.default{
+    color: #fff;
+    background-color: #5A94F1;
+    padding: 3px 12px 5px;
+    border: 0px;
+    height: 2.142em;
+    min-width: 6em;
+    font-weight: bolder;
+    
+}

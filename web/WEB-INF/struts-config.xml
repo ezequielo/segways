@@ -27,6 +27,7 @@
         
         <action input="/registro.jsp" name="RegistroForm" path="/Registro" scope="request" type="com.myapp.struts.RegistroAction">
             <forward name="success" path="/Welcome.do" redirect="true"/>
+            <forward name="failure" path="/registro.jsp" redirect="false"/>
         </action>
         
         <action path="/Welcome" forward="/login.jsp"/>

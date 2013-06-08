@@ -8,19 +8,27 @@
 <html:html lang="true">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./css/style.css" type="text/css" />
         <title><bean:message key="welcome.title"/></title>
         <html:base/>
     </head>
     <body>
         <h1>LOGIN</h1>
-        <html:form action="/Login">
-            <table>
-                <tr><td colspan="2"><bean:write name="LoginForm" property="message" /></td></tr>
-                <tr><td><label>Username:</label></td><td><html:text property="usuario"/></td></tr>
-                <tr><td><label>Password:</label></td><td><html:password property="password"/></td></tr>
-                <tr><td colspan="2"><html:submit value="Login"/></td></tr>
-                <tr><td colspan="2"><a href="registro.jsp">Crearme una cuenta!</a></td></tr>
-            </table>
-        </html:form>
+        <div id="login" class="login">
+            <html:form action="/Login">
+                <table>
+                    <tr><td colspan="2"><bean:write name="LoginForm" property="message" /></td></tr>
+                    <tr><td><label>Username:</label></td><td><html:text property="usuario"/></td></tr>
+                    <tr><td><label>Password:</label></td><td><html:password property="password"/></td></tr>
+                    <tr><td><br/></td></tr>
+                    <tr><td colspan="2"><html:submit value="Login" styleClass="default"/></td></tr>
+                    <tr><td><br/></td></tr>
+                    <tr><td colspan="2">¿No eres cliente?, <a class="link" href="registro.jsp">Regístrate</a></td></tr>
+                </table>
+            </html:form>
+        </div>
+        <div id="loginFoto" class="loginFoto">
+            FOTO
+        </div>
     </body>
 </html:html>

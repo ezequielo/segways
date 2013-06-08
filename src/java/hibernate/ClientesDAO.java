@@ -13,11 +13,11 @@ import org.hibernate.Session;
  *
  * @author Carlos
  */
-public class UsuariosDAO {
+public class ClientesDAO {
 
     Session hSession = null;
 
-    public UsuariosDAO() {
+    public ClientesDAO() {
         this.hSession = HibernateUtil.getSessionFactory().openSession();
     }
 
@@ -31,12 +31,11 @@ public class UsuariosDAO {
      hSession.getTransaction().commit();
      return rowCount;
      }*/
-    public Usuarios create(String usuario, String password, String perfil) {     
-        Usuarios usuarios = new Usuarios(usuario, password, perfil);
+    public void create(Usuarios usuario, String nombre, String apellido_1, String apellido_2, String ident, String direccion, String localidad, String provincia, String cp, String telefono, String pais, String email) {     
+        Clientes cliente = new Clientes(usuario, nombre, apellido_1, apellido_2, ident, direccion, localidad, provincia, cp, telefono, pais, email);
         hSession.beginTransaction();
-        hSession.save(usuarios);
+        hSession.save(cliente);
         hSession.getTransaction().commit();
-        return usuarios;
     }
     
     public Usuarios get(String usuario) {

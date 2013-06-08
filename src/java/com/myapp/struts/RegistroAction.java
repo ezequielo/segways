@@ -4,6 +4,9 @@
  */
 package com.myapp.struts;
 
+import hibernate.ClientesDAO;
+import hibernate.Usuarios;
+import hibernate.UsuariosDAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -34,6 +37,11 @@ public class RegistroAction extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
+        RegistroForm f = (RegistroForm) form;
+        UsuariosDAO uDAO = new UsuariosDAO();
+        ClientesDAO cDAO = new ClientesDAO();
+        Usuarios usuario = uDAO.create(f.getEmail(), "1234", "cliente");
+        cDAO.create(usuario, f.getNombre(), f.getApellido_1(), f.getApellido_2(), f.getIdentidad(),f.getDireccion(), f.getLocalidad(), f.getProvincia(),  f.getCp(), f.getTelefono(), f.getPais(), f.getEmail());
         return mapping.findForward(SUCCESS);
     }
 }
