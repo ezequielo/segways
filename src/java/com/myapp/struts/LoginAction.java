@@ -6,11 +6,18 @@ package com.myapp.struts;
 
 import hibernate.Usuarios;
 import hibernate.UsuariosDAO;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import util.Mail;
 
 /**
  *
@@ -45,6 +52,8 @@ public class LoginAction extends org.apache.struts.action.Action {
             formulario.setMessage("Identificación incorrecta");
             return mapping.findForward(FAILURE);
         }
+        
+        //Mail.enviarMail("carvelreq@gmail.com", "holaa", "que talll");
 
         return mapping.findForward(SUCCESS);
     }
