@@ -7,9 +7,9 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/segways?zeroDateTimeBehavior=convertToNull</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.current_session_context_class">thread</property>
-        <property key="hibernate.connection.useUnicode">true</property>
-        <property key="hibernate.connection.characterEncoding">UTF-8</property>
-        <property key="hibernate.connection.charSet">UTF-8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+        <property name="hibernate.connection.characterEncoding">UTF-8</property>
+        <property name="hibernate.connection.charSet">UTF-8</property>
         <mapping resource="hibernate/Usuarios.hbm.xml"/>
         <mapping resource="hibernate/Clientes.hbm.xml"/>
     </session-factory>
