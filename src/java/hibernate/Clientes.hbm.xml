@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 04-jun-2013 17:05:56 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 13-jun-2013 17:50:03 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="hibernate.Clientes" table="clientes" catalog="segways">
+    <class name="hibernate.Clientes" table="clientes" catalog="banco">
         <id name="pkCliente" type="java.lang.Integer">
             <column name="pk_cliente" />
             <generator class="identity" />
         </id>
         <many-to-one name="usuarios" class="hibernate.Usuarios" fetch="select">
             <column name="pk_usuario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sucursales" class="hibernate.Sucursales" fetch="select">
+            <column name="pk_sucursal" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">
             <column name="nombre" length="45" not-null="true" />
@@ -44,5 +47,11 @@
         <property name="email" type="string">
             <column name="email" length="100" not-null="true" />
         </property>
+        <set name="cuentasHasClienteses" inverse="true">
+            <key>
+                <column name="clientes_pk_cliente" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.CuentasHasClientes" />
+        </set>
     </class>
 </hibernate-mapping>

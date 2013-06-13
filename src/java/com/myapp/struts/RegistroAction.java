@@ -41,7 +41,7 @@ public class RegistroAction extends org.apache.struts.action.Action {
         UsuariosDAO uDAO = new UsuariosDAO();
         ClientesDAO cDAO = new ClientesDAO();
         Usuarios usuario = uDAO.create(f.getEmail(), "1234", "cliente");
-        cDAO.create(usuario, f.getNombre(), f.getApellido_1(), f.getApellido_2(), f.getIdentidad(),f.getDireccion(), f.getLocalidad(), f.getProvincia(),  f.getCp(), f.getTelefono(), f.getPais(), f.getEmail());
+        cDAO.create(usuario, null ,f.getNombre(), f.getApellido_1(), f.getApellido_2(), f.getIdentidad(),f.getDireccion(), f.getLocalidad(), f.getProvincia(),  f.getCp(), f.getTelefono(), f.getPais(), f.getEmail());
         return mapping.findForward(SUCCESS);
     }
 }

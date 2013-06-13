@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2013 17:50:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="hibernate.CuentasHasClientes" table="cuentas_has_clientes" catalog="banco">
+        <composite-id name="id" class="hibernate.CuentasHasClientesId">
+            <key-property name="cuentasPkCuenta" type="int">
+                <column name="cuentas_pk_cuenta" />
+            </key-property>
+            <key-property name="clientesPkCliente" type="int">
+                <column name="clientes_pk_cliente" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cuentas" class="hibernate.Cuentas" update="false" insert="false" fetch="select">
+            <column name="cuentas_pk_cuenta" not-null="true" />
+        </many-to-one>
+        <many-to-one name="clientes" class="hibernate.Clientes" update="false" insert="false" fetch="select">
+            <column name="clientes_pk_cliente" not-null="true" />
+        </many-to-one>
+        <property name="tipoCliente" type="string">
+            <column name="tipo_cliente" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

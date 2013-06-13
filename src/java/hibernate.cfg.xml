@@ -4,13 +4,18 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/segways?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/banco?zeroDateTimeBehavior=convertToNull</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.connection.useUnicode">true</property>
         <property name="hibernate.connection.characterEncoding">UTF-8</property>
         <property name="hibernate.connection.charSet">UTF-8</property>
-        <mapping resource="hibernate/Usuarios.hbm.xml"/>
+        <mapping resource="hibernate/CuentasHasClientes.hbm.xml"/>
+        <mapping resource="hibernate/Sucursales.hbm.xml"/>
+        <mapping resource="hibernate/Tarjetas.hbm.xml"/>
+        <mapping resource="hibernate/Personales.hbm.xml"/>
         <mapping resource="hibernate/Clientes.hbm.xml"/>
+        <mapping resource="hibernate/Usuarios.hbm.xml"/>
+        <mapping resource="hibernate/Cuentas.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

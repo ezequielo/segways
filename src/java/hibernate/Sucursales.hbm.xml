@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2013 17:50:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Sucursales" table="sucursales" catalog="banco">
+        <id name="pkSucursal" type="java.lang.Integer">
+            <column name="pk_sucursal" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="100" not-null="true" />
+        </property>
+        <property name="cp" type="string">
+            <column name="cp" length="20" not-null="true" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="100" not-null="true" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="100" not-null="true" />
+        </property>
+        <property name="codigoSucursal" type="string">
+            <column name="codigo_sucursal" length="10" not-null="true" />
+        </property>
+        <set name="personaleses" inverse="true">
+            <key>
+                <column name="pk_sucursal" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Personales" />
+        </set>
+        <set name="clienteses" inverse="true">
+            <key>
+                <column name="pk_sucursal" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Clientes" />
+        </set>
+    </class>
+</hibernate-mapping>

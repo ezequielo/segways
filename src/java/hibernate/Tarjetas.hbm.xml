@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2013 17:50:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Tarjetas" table="tarjetas" catalog="banco">
+        <id name="pkTarjeta" type="java.lang.Integer">
+            <column name="pk_tarjeta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cuentas" class="hibernate.Cuentas" fetch="select">
+            <column name="pk_cuenta" not-null="true" />
+        </many-to-one>
+        <property name="numero" type="string">
+            <column name="numero" length="50" not-null="true" />
+        </property>
+        <property name="codigoSeguridad" type="string">
+            <column name="codigo_seguridad" length="10" not-null="true" />
+        </property>
+        <property name="fechaCaducidad" type="string">
+            <column name="fecha_caducidad" length="20" not-null="true" />
+        </property>
+        <property name="pin" type="string">
+            <column name="pin" length="100" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

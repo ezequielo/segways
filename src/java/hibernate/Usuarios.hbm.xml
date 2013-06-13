@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 04-jun-2013 17:05:56 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 13-jun-2013 17:50:03 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="hibernate.Usuarios" table="usuarios" catalog="segways">
+    <class name="hibernate.Usuarios" table="usuarios" catalog="banco">
         <id name="pkUsuario" type="java.lang.Integer">
             <column name="pk_usuario" />
             <generator class="identity" />
@@ -17,6 +17,12 @@
         <property name="perfil" type="string">
             <column name="perfil" length="45" not-null="true" />
         </property>
+        <set name="personaleses" inverse="true">
+            <key>
+                <column name="pk_usuario" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Personales" />
+        </set>
         <set name="clienteses" inverse="true">
             <key>
                 <column name="pk_usuario" not-null="true" />

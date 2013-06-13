@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-jun-2013 17:50:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Cuentas" table="cuentas" catalog="banco">
+        <id name="pkCuenta" type="java.lang.Integer">
+            <column name="pk_cuenta" />
+            <generator class="identity" />
+        </id>
+        <property name="codigoEntidad" type="string">
+            <column name="codigo_entidad" length="10" not-null="true" />
+        </property>
+        <property name="codigoSucursal" type="string">
+            <column name="codigo_sucursal" length="10" not-null="true" />
+        </property>
+        <property name="digitoControl" type="string">
+            <column name="digito_control" length="10" not-null="true" />
+        </property>
+        <property name="numeroCuenta" type="string">
+            <column name="numero_cuenta" length="10" not-null="true" />
+        </property>
+        <property name="saldo" type="string">
+            <column name="saldo" length="10" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="50" not-null="true" />
+        </property>
+        <set name="cuentasHasClienteses" inverse="true">
+            <key>
+                <column name="cuentas_pk_cuenta" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.CuentasHasClientes" />
+        </set>
+        <set name="tarjetases" inverse="true">
+            <key>
+                <column name="pk_cuenta" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Tarjetas" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -21,13 +21,16 @@
 
     <action-mappings>
         <action input="/Welcome" name="LoginForm" path="/Login" scope="request" type="com.myapp.struts.LoginAction">
-            <forward name="success" path="/WEB-INF/principal.jsp"/>
+            <forward name="success" path="/WEB-INF/menuPersonal.jsp"/>
             <forward name="failure" path="/Welcome.do"/>
         </action>
         
         <action input="/registro.jsp" name="RegistroForm" path="/Registro" scope="request" type="com.myapp.struts.RegistroAction">
             <forward name="success" path="/Welcome.do" redirect="true"/>
             <forward name="failure" path="/registro.jsp" redirect="false"/>
+        </action>
+        <action path="/GestionSucursal" type="com.myapp.struts.GestionSucursalAction">
+            <forward name="success" path="/WEB-INF/gestionSucursal.jsp" redirect="false"/>
         </action>
         
         <action path="/Welcome" forward="/login.jsp"/>
