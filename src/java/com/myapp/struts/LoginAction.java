@@ -19,7 +19,8 @@ import org.apache.struts.action.ActionMapping;
 public class LoginAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+    private static final String SUCCESS_CLIENTE = "successCliente";
+    private static final String SUCCESS_PERSONAL = "successPersonal";
     private static final String FAILURE = "failure";
 
     /**
@@ -45,9 +46,14 @@ public class LoginAction extends org.apache.struts.action.Action {
             formulario.setMessage("Identificación incorrecta");
             return mapping.findForward(FAILURE);
         }
-        
-        //Mail.enviarMail("carvelreq@gmail.com", "holaa", "que talll");
 
-        return mapping.findForward(SUCCESS);
+        //Mail.enviarMail("carvelreq@gmail.com", "holaa", "que talll");
+        if (usuario.getPerfil().equals("admin")) {
+            return mapping.findForward(SUCCESS_PERSONAL);
+        } else if (usuario.getPerfil().equals("cliente")) {
+            return mapping.findForward(SUCCESS_CLIENTE);
+        }
+        return mapping.findForward(FAILURE);
+
     }
 }
