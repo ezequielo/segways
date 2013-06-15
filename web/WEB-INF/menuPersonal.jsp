@@ -12,13 +12,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="./css/style.css" type="text/css" />
+        <link rel="stylesheet" href="./css/stylePrueba.css" type="text/css" />
         <title>Administración</title>
     </head>
     <body>
         <h1>Menú de Administración</h1>
-        <ul>
-            <li><html:link action="/GestionSucursal">Gestión de Sucursales</html:link></li>
-        </ul>
+
+        <div>
+            <ul>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
+               
+            </ul>
+        </div>
     </body>
 </html>
