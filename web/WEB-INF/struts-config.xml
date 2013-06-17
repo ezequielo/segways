@@ -38,7 +38,10 @@
             <forward name="success" path="/WEB-INF/altaSucursal.jsp" redirect="false" />
         </action>
         <action input="/WEB-INF/altaSucursal.jsp" name="InsertarSucursalForm" path="/InsertarSucursal" scope="request" type="com.myapp.struts.InsertarSucursalAction" validate="false">
-            <forward name="success" path="/WEB-INF/gestionSucursal.jsp"/>
+            <forward name="success" path="/WEB-INF/gestionSucursal.jsp" redirect="false"/>
+        </action>
+        <action path="/ListarSucursal" type="com.myapp.struts.ListarSucursalAction" validate="false" >
+            <forward name="success" path="/WEB-INF/listarSucursal.jsp" redirect="false" />
         </action>
         <action path="/Welcome" forward="/login.jsp"/>
     </action-mappings>

@@ -36,7 +36,7 @@ public class Mail {
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
         message.setSubject(subject);
         message.setText(text);
-
+        
         Transport t = session.getTransport("smtp");
         t.connect(FROM, PASSWORD);
         t.sendMessage(message, message.getAllRecipients());

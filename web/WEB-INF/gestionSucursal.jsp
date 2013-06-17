@@ -18,7 +18,7 @@
     <body>
         <h1>Gestión de Sucursales</h1>
         <ul>
-            <li><html:link action="/">Listar todas las sucursales</html:link></li>
+            <li><html:link action="/ListarSucursal">Listar todas las sucursales</html:link></li>
             <li><html:link action="/AltaSucursal">Dar de alta una sucursal</html:link></li>
         </ul>
     </body>

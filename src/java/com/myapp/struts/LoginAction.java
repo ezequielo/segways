@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+//import util.Mail;
 
 /**
  *
@@ -47,7 +48,7 @@ public class LoginAction extends org.apache.struts.action.Action {
             return mapping.findForward(FAILURE);
         }
 
-        //Mail.enviarMail("carvelreq@gmail.com", "holaa", "que talll");
+        //Mail.enviarMail("ezequielra1@gmail.com", "holaa", "que talll");
         if (usuario.getPerfil().equals("admin")) {
             return mapping.findForward(SUCCESS_PERSONAL);
         } else if (usuario.getPerfil().equals("cliente")) {

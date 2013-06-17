@@ -31,12 +31,12 @@ public class SucursalesDAO {
         hSession.save(sucursal);
         hSession.getTransaction().commit();
     }
-    public Sucursales get(String sucursal) {
+    public List<Sucursales> get() {
         hSession.clear();
-        Query q = hSession.createQuery("from Sucursales where usuario='" + sucursal + "'");
+        Query q = hSession.createQuery("from Sucursales");
         List<Sucursales> lista = q.list();
         if (!lista.isEmpty()) {
-            return lista.get(0);
+            return lista;
         }
         return null;
     }
