@@ -26,6 +26,8 @@
                     <th>Localidad</th>
                     <th>Provincia</th>
                     <th>C&oacute;digo de sucursal</th>
+                    <th>Latitud</th>
+                    <th>Longitud</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +40,8 @@
                             <td><bean:write name="listar" property="localidad" /></td>
                             <td><bean:write name="listar" property="provincia" /></td>
                             <td><bean:write name="listar" property="codigoSucursal" /></td>
+                            <td><bean:write name="listar" property="latitud" /></td>
+                            <td><bean:write name="listar" property="longitud" /></td>
                             <td>
                                 <!html:form action="/ActualizarSucursal" >
                                     <!html:image value="actualizar" src="./images/" />

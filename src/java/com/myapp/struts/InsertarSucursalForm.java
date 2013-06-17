@@ -22,7 +22,9 @@ public class InsertarSucursalForm extends org.apache.struts.action.ActionForm {
      private String localidad;
      private String provincia;
      private String codigoSucursal;
-
+     private String latitud;
+     private String longitud;
+     
     public String getNombre() {
         return nombre;
     }
@@ -70,7 +72,24 @@ public class InsertarSucursalForm extends org.apache.struts.action.ActionForm {
     public void setCodigoSucursal(String codigoSucursal) {
         this.codigoSucursal = codigoSucursal;
     }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
    
+    
     /**
      *
      */

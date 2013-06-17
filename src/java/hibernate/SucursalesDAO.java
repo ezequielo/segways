@@ -25,8 +25,8 @@ public class SucursalesDAO {
     
 
     
-    public void create(String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal) {
-        Sucursales sucursal=new Sucursales(nombre, direccion, cp, localidad, provincia, codigoSucursal,null,null);
+    public void create(String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal,String latitud,String longitud) {
+        Sucursales sucursal=new Sucursales(nombre, direccion, cp, localidad, provincia, codigoSucursal,latitud,longitud);
         hSession.beginTransaction();
         hSession.save(sucursal);
         hSession.getTransaction().commit();
@@ -41,7 +41,7 @@ public class SucursalesDAO {
         return null;
     }
     
-    public void update(Integer pkSucursal,String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal){
+    public void update(Integer pkSucursal,String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal,String latitud,String longitud){
         Sucursales sucursal = this.get(pkSucursal);
         sucursal.setNombre(nombre);
         sucursal.setDireccion(direccion);
@@ -49,6 +49,8 @@ public class SucursalesDAO {
         sucursal.setLocalidad(localidad);
         sucursal.setProvincia(provincia);
         sucursal.setCodigoSucursal(codigoSucursal);
+        sucursal.setLatitud(latitud);
+        sucursal.setLongitud(longitud);
         hSession.beginTransaction();
         hSession.update(sucursal);
         hSession.getTransaction().commit();

@@ -37,7 +37,7 @@ public class InsertarSucursalAction extends org.apache.struts.action.Action {
             throws Exception {
         InsertarSucursalForm in=(InsertarSucursalForm) form; 
         SucursalesDAO dao=new SucursalesDAO();
-        dao.create(in.getNombre(),in.getDireccion(), in.getCp(), in.getLocalidad(), in.getProvincia(), in.getCodigoSucursal());
+        dao.create(in.getNombre(),in.getDireccion(), in.getCp(), in.getLocalidad(), in.getProvincia(), in.getCodigoSucursal(),in.getLatitud(),in.getLongitud());
         return mapping.findForward(SUCCESS);
     }
 }

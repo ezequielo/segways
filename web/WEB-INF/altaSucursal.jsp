@@ -45,6 +45,14 @@
                     <td><html:text property="codigoSucursal" /></td>
                 </tr>
                 <tr>
+                    <td>Latitud</td>
+                    <td><html:text property="latitud" /></td>
+                </tr>
+                <tr>
+                    <td>Longitud</td>
+                    <td><html:text property="longitud" /></td>
+                </tr>
+                <tr>
                     <td colspan="2"><html:submit value="Crear" /></td> 
                 </tr>
             </tbody>
