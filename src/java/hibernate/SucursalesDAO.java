@@ -31,12 +31,41 @@ public class SucursalesDAO {
         hSession.save(sucursal);
         hSession.getTransaction().commit();
     }
-    public List<Sucursales> get() {
+    public List<Sucursales> getList() {
         hSession.clear();
         Query q = hSession.createQuery("from Sucursales");
         List<Sucursales> lista = q.list();
         if (!lista.isEmpty()) {
             return lista;
+        }
+        return null;
+    }
+    
+    public void update(Integer pkSucursal,String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal){
+        Sucursales sucursal = this.get(pkSucursal);
+        sucursal.setNombre(nombre);
+        sucursal.setDireccion(direccion);
+        sucursal.setCp(cp);
+        sucursal.setLocalidad(localidad);
+        sucursal.setProvincia(provincia);
+        sucursal.setCodigoSucursal(codigoSucursal);
+        hSession.beginTransaction();
+        hSession.update(sucursal);
+        hSession.getTransaction().commit();
+    }
+    
+    public void delete(Integer pkSucursal){
+        Sucursales sucursal = this.get(pkSucursal);
+        hSession.beginTransaction();
+        hSession.delete(sucursal);
+        hSession.getTransaction().commit();
+    } 
+    public Sucursales get(Integer pkSucursal){
+        hSession.clear();
+        Query q = hSession.createQuery("from Sucursales where pkSucursal=:pkSucursal");
+        List<Sucursales> lista = q.list();
+        if (!lista.isEmpty()) {
+            return lista.get(0);
         }
         return null;
     }

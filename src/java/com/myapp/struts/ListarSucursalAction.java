@@ -37,7 +37,7 @@ public class ListarSucursalAction extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         SucursalesDAO dao=new SucursalesDAO();
-        List<Sucursales> listar = dao.get();
+        List<Sucursales> listar = dao.getList();
         request.setAttribute("listar", listar);
         return mapping.findForward(SUCCESS);
     }

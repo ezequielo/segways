@@ -8,10 +8,12 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./css/style.css" type="text/css" />
         <title>Listar sucursal</title>
     </head>
     <body>
@@ -38,12 +40,12 @@
                             <td><bean:write name="listar" property="codigoSucursal" /></td>
                             <td>
                                 <!html:form action="/ActualizarSucursal" >
-                                    <!html:image value="actualizar" src="/images/" />
+                                    <!html:image value="actualizar" src="./images/" />
                                 <!--<!/html:form>-->
                             </td>
                             <td>
                                 <!html:form action="/EliminarSucursal" >
-                                    <!html:image value="actualizar" src="/images/" />
+                                    <!html:image value="eliminar" src="./images/" />
                                 <!--<!/html:form>-->
                             </td>
                         </tr>
