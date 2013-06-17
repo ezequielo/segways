@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 13-jun-2013 17:50:03 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 17-jun-2013 20:09:03 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="hibernate.Cuentas" table="cuentas" catalog="banco">
         <id name="pkCuenta" type="java.lang.Integer">
@@ -26,6 +26,24 @@
         <property name="tipo" type="string">
             <column name="tipo" length="50" not-null="true" />
         </property>
+        <set name="seguroses" inverse="true">
+            <key>
+                <column name="pk_cuenta" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Seguros" />
+        </set>
+        <set name="domiciliacioneses" inverse="true">
+            <key>
+                <column name="pk_cuenta" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Domiciliaciones" />
+        </set>
+        <set name="prestamoses" inverse="true">
+            <key>
+                <column name="pk_cuenta" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Prestamos" />
+        </set>
         <set name="cuentasHasClienteses" inverse="true">
             <key>
                 <column name="cuentas_pk_cuenta" not-null="true" />
@@ -37,6 +55,12 @@
                 <column name="pk_cuenta" not-null="true" />
             </key>
             <one-to-many class="hibernate.Tarjetas" />
+        </set>
+        <set name="movimientoses" inverse="true">
+            <key>
+                <column name="pk_cuenta" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Movimientos" />
         </set>
     </class>
 </hibernate-mapping>

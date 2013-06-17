@@ -26,7 +26,7 @@ public class SucursalesDAO {
 
     
     public void create(String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal) {
-        Sucursales sucursal=new Sucursales(nombre, direccion, cp, localidad, provincia, codigoSucursal);
+        Sucursales sucursal=new Sucursales(nombre, direccion, cp, localidad, provincia, codigoSucursal,null,null);
         hSession.beginTransaction();
         hSession.save(sucursal);
         hSession.getTransaction().commit();

@@ -1,5 +1,5 @@
 package hibernate;
-// Generated 13-jun-2013 17:50:01 by Hibernate Tools 3.2.1.GA
+// Generated 17-jun-2013 20:09:01 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -18,6 +18,8 @@ public class Sucursales  implements java.io.Serializable {
      private String localidad;
      private String provincia;
      private String codigoSucursal;
+     private String longitud;
+     private String latitud;
      private Set personaleses = new HashSet(0);
      private Set clienteses = new HashSet(0);
 
@@ -25,21 +27,25 @@ public class Sucursales  implements java.io.Serializable {
     }
 
 	
-    public Sucursales(String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal) {
+    public Sucursales(String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal, String longitud, String latitud) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.cp = cp;
         this.localidad = localidad;
         this.provincia = provincia;
         this.codigoSucursal = codigoSucursal;
+        this.longitud = longitud;
+        this.latitud = latitud;
     }
-    public Sucursales(String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal, Set personaleses, Set clienteses) {
+    public Sucursales(String nombre, String direccion, String cp, String localidad, String provincia, String codigoSucursal, String longitud, String latitud, Set personaleses, Set clienteses) {
        this.nombre = nombre;
        this.direccion = direccion;
        this.cp = cp;
        this.localidad = localidad;
        this.provincia = provincia;
        this.codigoSucursal = codigoSucursal;
+       this.longitud = longitud;
+       this.latitud = latitud;
        this.personaleses = personaleses;
        this.clienteses = clienteses;
     }
@@ -92,6 +98,20 @@ public class Sucursales  implements java.io.Serializable {
     
     public void setCodigoSucursal(String codigoSucursal) {
         this.codigoSucursal = codigoSucursal;
+    }
+    public String getLongitud() {
+        return this.longitud;
+    }
+    
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+    public String getLatitud() {
+        return this.latitud;
+    }
+    
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
     }
     public Set getPersonaleses() {
         return this.personaleses;

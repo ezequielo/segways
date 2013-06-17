@@ -2,11 +2,15 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="banco"/>
-  <table-filter match-name="usuarios"/>
+  <table-filter match-name="seguros"/>
+  <table-filter match-name="cuentas"/>
   <table-filter match-name="clientes"/>
   <table-filter match-name="personales"/>
-  <table-filter match-name="cuentas"/>
+  <table-filter match-name="movimientos"/>
   <table-filter match-name="tarjetas"/>
+  <table-filter match-name="usuarios"/>
+  <table-filter match-name="prestamos"/>
   <table-filter match-name="sucursales"/>
+  <table-filter match-name="domiciliaciones"/>
   <table-filter match-name="cuentas_has_clientes"/>
 </hibernate-reverse-engineering>

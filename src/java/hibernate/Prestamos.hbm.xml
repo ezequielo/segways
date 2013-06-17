@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-jun-2013 20:09:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Prestamos" table="prestamos" catalog="banco">
+        <id name="pkPrestamo" type="java.lang.Integer">
+            <column name="pk_prestamo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cuentas" class="hibernate.Cuentas" fetch="select">
+            <column name="pk_cuenta" not-null="true" />
+        </many-to-one>
+        <property name="cantidad" type="long">
+            <column name="cantidad" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="cantidadPagada" type="long">
+            <column name="cantidad_pagada" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="cuotaMensual" type="long">
+            <column name="cuota_mensual" precision="10" scale="0" not-null="true" />
+        </property>
+        <property name="mesesAmortizar" type="string">
+            <column name="meses_amortizar" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

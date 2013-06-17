@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2013 a las 18:56:14
+-- Tiempo de generación: 17-06-2013 a las 20:04:19
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -83,6 +83,21 @@ CREATE TABLE IF NOT EXISTS `cuentas_has_clientes` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `domiciliaciones`
+--
+
+CREATE TABLE IF NOT EXISTS `domiciliaciones` (
+  `pk_domiciliacion` int(11) NOT NULL AUTO_INCREMENT,
+  `pk_cuenta` int(11) NOT NULL,
+  `entidad` varchar(45) NOT NULL,
+  `bloqueado` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pk_domiciliacion`),
+  KEY `r_domiciliaciones_cuentas_idx` (`pk_cuenta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `movimientos`
 --
 
@@ -119,6 +134,39 @@ CREATE TABLE IF NOT EXISTS `personales` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `prestamos`
+--
+
+CREATE TABLE IF NOT EXISTS `prestamos` (
+  `pk_prestamo` int(11) NOT NULL AUTO_INCREMENT,
+  `pk_cuenta` int(11) NOT NULL,
+  `cantidad` decimal(10,0) NOT NULL,
+  `cantidad_pagada` decimal(10,0) NOT NULL DEFAULT '0',
+  `cuota_mensual` decimal(10,0) NOT NULL,
+  `meses_amortizar` varchar(10) NOT NULL,
+  PRIMARY KEY (`pk_prestamo`),
+  KEY `r_prestamos_cuentas_idx` (`pk_cuenta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `seguros`
+--
+
+CREATE TABLE IF NOT EXISTS `seguros` (
+  `pk_seguro` int(11) NOT NULL AUTO_INCREMENT,
+  `pk_cuenta` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `importe` decimal(10,0) NOT NULL,
+  `meses` varchar(10) NOT NULL,
+  PRIMARY KEY (`pk_seguro`),
+  KEY `r_seguros_cuentas_idx` (`pk_cuenta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `sucursales`
 --
 
@@ -130,6 +178,8 @@ CREATE TABLE IF NOT EXISTS `sucursales` (
   `localidad` varchar(100) NOT NULL,
   `provincia` varchar(100) NOT NULL,
   `codigo_sucursal` varchar(10) NOT NULL,
+  `longitud` varchar(45) NOT NULL,
+  `latitud` varchar(45) NOT NULL,
   PRIMARY KEY (`pk_sucursal`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -149,22 +199,6 @@ CREATE TABLE IF NOT EXISTS `tarjetas` (
   `tipo` varchar(100) NOT NULL,
   PRIMARY KEY (`pk_tarjeta`),
   KEY `r_tarjetas_cuentas_idx` (`pk_cuenta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `transferencias`
---
-
-CREATE TABLE IF NOT EXISTS `transferencias` (
-  `pk_transferencia` int(11) NOT NULL AUTO_INCREMENT,
-  `pk_cuenta_origen` int(11) NOT NULL,
-  `pk_cuenta_destino` int(11) NOT NULL,
-  `importe` varchar(45) NOT NULL,
-  PRIMARY KEY (`pk_transferencia`),
-  KEY `r_transferencias_cuentas_origen_idx` (`pk_cuenta_origen`),
-  KEY `r_transferencias_cuentas_destino_idx` (`pk_cuenta_destino`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -207,6 +241,12 @@ ALTER TABLE `cuentas_has_clientes`
   ADD CONSTRAINT `fk_cuentas_has_clientes_clientes1` FOREIGN KEY (`clientes_pk_cliente`) REFERENCES `clientes` (`pk_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Filtros para la tabla `domiciliaciones`
+--
+ALTER TABLE `domiciliaciones`
+  ADD CONSTRAINT `r_domiciliaciones_cuentas` FOREIGN KEY (`pk_cuenta`) REFERENCES `cuentas` (`pk_cuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Filtros para la tabla `movimientos`
 --
 ALTER TABLE `movimientos`
@@ -220,17 +260,22 @@ ALTER TABLE `personales`
   ADD CONSTRAINT `r_empleados_sucursales` FOREIGN KEY (`pk_sucursal`) REFERENCES `sucursales` (`pk_sucursal`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Filtros para la tabla `prestamos`
+--
+ALTER TABLE `prestamos`
+  ADD CONSTRAINT `r_prestamos_cuentas` FOREIGN KEY (`pk_cuenta`) REFERENCES `cuentas` (`pk_cuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `seguros`
+--
+ALTER TABLE `seguros`
+  ADD CONSTRAINT `r_seguros_cuentas` FOREIGN KEY (`pk_cuenta`) REFERENCES `cuentas` (`pk_cuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Filtros para la tabla `tarjetas`
 --
 ALTER TABLE `tarjetas`
   ADD CONSTRAINT `r_tarjetas_cuentas` FOREIGN KEY (`pk_cuenta`) REFERENCES `cuentas` (`pk_cuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `transferencias`
---
-ALTER TABLE `transferencias`
-  ADD CONSTRAINT `r_transferencias_cuentas_origen` FOREIGN KEY (`pk_cuenta_origen`) REFERENCES `cuentas` (`pk_cuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `r_transferencias_cuentas_destino` FOREIGN KEY (`pk_cuenta_destino`) REFERENCES `cuentas` (`pk_cuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

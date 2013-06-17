@@ -1,5 +1,5 @@
 package hibernate;
-// Generated 13-jun-2013 17:50:01 by Hibernate Tools 3.2.1.GA
+// Generated 17-jun-2013 20:09:01 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -18,8 +18,12 @@ public class Cuentas  implements java.io.Serializable {
      private String numeroCuenta;
      private String saldo;
      private String tipo;
+     private Set seguroses = new HashSet(0);
+     private Set domiciliacioneses = new HashSet(0);
+     private Set prestamoses = new HashSet(0);
      private Set cuentasHasClienteses = new HashSet(0);
      private Set tarjetases = new HashSet(0);
+     private Set movimientoses = new HashSet(0);
 
     public Cuentas() {
     }
@@ -33,15 +37,19 @@ public class Cuentas  implements java.io.Serializable {
         this.saldo = saldo;
         this.tipo = tipo;
     }
-    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String numeroCuenta, String saldo, String tipo, Set cuentasHasClienteses, Set tarjetases) {
+    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String numeroCuenta, String saldo, String tipo, Set seguroses, Set domiciliacioneses, Set prestamoses, Set cuentasHasClienteses, Set tarjetases, Set movimientoses) {
        this.codigoEntidad = codigoEntidad;
        this.codigoSucursal = codigoSucursal;
        this.digitoControl = digitoControl;
        this.numeroCuenta = numeroCuenta;
        this.saldo = saldo;
        this.tipo = tipo;
+       this.seguroses = seguroses;
+       this.domiciliacioneses = domiciliacioneses;
+       this.prestamoses = prestamoses;
        this.cuentasHasClienteses = cuentasHasClienteses;
        this.tarjetases = tarjetases;
+       this.movimientoses = movimientoses;
     }
    
     public Integer getPkCuenta() {
@@ -93,6 +101,27 @@ public class Cuentas  implements java.io.Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    public Set getSeguroses() {
+        return this.seguroses;
+    }
+    
+    public void setSeguroses(Set seguroses) {
+        this.seguroses = seguroses;
+    }
+    public Set getDomiciliacioneses() {
+        return this.domiciliacioneses;
+    }
+    
+    public void setDomiciliacioneses(Set domiciliacioneses) {
+        this.domiciliacioneses = domiciliacioneses;
+    }
+    public Set getPrestamoses() {
+        return this.prestamoses;
+    }
+    
+    public void setPrestamoses(Set prestamoses) {
+        this.prestamoses = prestamoses;
+    }
     public Set getCuentasHasClienteses() {
         return this.cuentasHasClienteses;
     }
@@ -106,6 +135,13 @@ public class Cuentas  implements java.io.Serializable {
     
     public void setTarjetases(Set tarjetases) {
         this.tarjetases = tarjetases;
+    }
+    public Set getMovimientoses() {
+        return this.movimientoses;
+    }
+    
+    public void setMovimientoses(Set movimientoses) {
+        this.movimientoses = movimientoses;
     }
 
 

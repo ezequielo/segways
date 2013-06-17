@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-jun-2013 20:09:03 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Movimientos" table="movimientos" catalog="banco">
+        <id name="pkMovimiento" type="java.lang.Integer">
+            <column name="pk_movimiento" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cuentas" class="hibernate.Cuentas" fetch="select">
+            <column name="pk_cuenta" not-null="true" />
+        </many-to-one>
+        <property name="importe" type="string">
+            <column name="importe" length="45" not-null="true" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="fecha" length="19" not-null="true" />
+        </property>
+        <property name="tipoOperacion" type="string">
+            <column name="tipo_operacion" length="45" not-null="true" />
+        </property>
+        <property name="AFavor" type="byte">
+            <column name="a_favor" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
