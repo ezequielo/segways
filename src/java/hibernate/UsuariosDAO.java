@@ -16,16 +16,6 @@ public class UsuariosDAO {
         this.hSession = HibernateUtil.getSessionFactory().openSession();
     }
 
-    /*public int bajaRecurso(int recursoID, String fechaBaja) throws SQLException {
-     String hql = "update Recurso set fechaBaja = :fechaBaja where recursoID = :recursoID";
-     Query query = hSession.createQuery(hql);
-     query.setInteger("recursoID", recursoID);
-     query.setString("fechaBaja", fechaBaja);
-     hSession.beginTransaction();
-     int rowCount = query.executeUpdate();
-     hSession.getTransaction().commit();
-     return rowCount;
-     }*/
     public Usuarios create(String usuario, String password, String perfil) {     
         Usuarios usuarios = new Usuarios(usuario, password, perfil);
         hSession.beginTransaction();
@@ -33,7 +23,9 @@ public class UsuariosDAO {
         hSession.getTransaction().commit();
         return usuarios;
     }
-    
+    /**
+     * @param usuario Buscar por el nombre de usuario
+     */
     public Usuarios get(String usuario) {
         hSession.clear();
         Query q = hSession.createQuery("from Usuarios where usuario='"+usuario+"'");
@@ -42,12 +34,40 @@ public class UsuariosDAO {
             return lista.get(0);
         return null;
     }
-    
-
-    /*public List<Recurso> consultaRecursosDisponibles() throws SQLException {
+    /**
+     * @param pkUsuario Buscar por la clave primaria de usuario
+     */
+    public Usuarios get(Integer pkUsuario) {
         hSession.clear();
-        Query q = hSession.createQuery("from Recurso");
-        List resultados = (List<Recurso>) q.list();
-        return resultados;
-    }*/
+        Query q = hSession.createQuery("from Usuarios where pkUsuario='"+pkUsuario+"'");
+        List<Usuarios> lista=q.list();
+        if(!lista.isEmpty())
+            return lista.get(0);
+        return null;
+    }
+    
+    public List<Usuarios> getList() {
+        hSession.clear();
+        Query q = hSession.createQuery("from Usuarios");
+        List<Usuarios> lista=q.list();
+        if(!lista.isEmpty())
+            return lista;
+        return null;
+    }
+    public void delete(Integer pkUsuario){
+        this.get(pkUsuario);
+        hSession.beginTransaction();
+        hSession.delete(pkUsuario);
+        hSession.getTransaction().commit();
+    }
+    public void update(Integer pkUsuario,String usuario, String password, String perfil){
+        Usuarios user = this.get(pkUsuario);
+        user.setUsuario(usuario);
+        user.setPassword(password);
+        user.setPerfil(perfil);
+        this.hSession.beginTransaction();
+        this.hSession.update(user);
+        this.hSession.getTransaction().commit();
+    }
+    
 }
