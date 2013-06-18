@@ -34,6 +34,18 @@
                 
             </field>
         </form>
+        <form name="LoginPersonalForm">
+            <field
+                property="usuario" depends="required">
+                <arg key="error.usuario"/>
+            </field>
+            <field
+                property="password" depends="required">
+                <arg key="error.clave"/>
+                
+            </field>
+        </form>
+        
     </formset>
 
 </form-validation>
