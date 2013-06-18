@@ -26,6 +26,7 @@ public class UsuariosDAO {
      hSession.getTransaction().commit();
      return rowCount;
      }*/
+    
     public Usuarios create(String usuario, String password, String perfil) {     
         Usuarios usuarios = new Usuarios(usuario, password, perfil);
         hSession.beginTransaction();
@@ -34,14 +35,16 @@ public class UsuariosDAO {
         return usuarios;
     }
     
-    public Usuarios get(String usuario) {
+    public Usuarios get(String usuario, String password) {
         hSession.clear();
-        Query q = hSession.createQuery("from Usuarios where usuario='"+usuario+"'");
+        Query q = hSession.createQuery("from Usuarios where usuario='"+usuario+"' and password='"+password+"' ");
         List<Usuarios> lista=q.list();
         if(!lista.isEmpty())
             return lista.get(0);
         return null;
     }
+    
+    
     
 
     /*public List<Recurso> consultaRecursosDisponibles() throws SQLException {

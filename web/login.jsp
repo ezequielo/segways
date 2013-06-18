@@ -14,19 +14,23 @@
     </head>
     <body>
         <h1>LOGIN</h1>
-        <div id="login" class="login">
-            <html:form action="/LoginAction">
+        <div id="login" class="login" >
+            <html:form action="/LoginAction" onsubmit="return(validateLoginForm(this));">
+
                 <html:errors/>
-                <html:javascript/>
+                <html:javascript formName="LoginForm"/>
                 <table>
-                    
+
                     <tr><td><label>Username:</label></td><td><html:text property="usuario"/></td></tr>
                     <tr><td><label>Password:</label></td><td><html:password property="password"/></td></tr>
-                    <tr><td><br/></td></tr>
+                    <tr><td></td></tr>
                     <tr><td colspan="2"><html:submit value="Login" styleClass="default"/></td></tr>
                     <tr><td><br/></td></tr>
                     <tr><td colspan="2">¿No eres cliente?, <a class="link" href="registro.jsp">Regístrate</a></td></tr>
                 </table>
+                <logic:notEmpty name="msg">
+                    <bean:write name="msg" />
+                </logic:notEmpty>
             </html:form>
         </div>
         <div id="loginFoto" class="loginFoto">
