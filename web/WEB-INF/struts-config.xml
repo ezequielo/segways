@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="EliminarSucursalForm" type="com.myapp.struts.EliminarSucursalForm"/>
         <form-bean name="LoginPersonalForm" type="com.myapp.struts.LoginPersonalForm"/>
         <form-bean name="RegistroForm" type="com.myapp.struts.RegistroForm"/>
         <form-bean name="LoginForm" type="com.myapp.struts.LoginForm"/>
@@ -40,10 +41,13 @@
             <forward name="failure" path="/login.jsp"/>
         </action>
         
-   
         <action input="/loginPersonal.jsp" name="LoginPersonalForm" path="/LoginPersonal" scope="request" type="com.myapp.struts.LoginPersonalAction">
             <forward name="success" path="/WEB-INF/menuPersonal.jsp"/>
             <forward name="failure" path="/loginPersonal.jsp"/>
+        </action>
+        
+        <action input="/" name="EliminarSucursalForm" path="/EliminarSucursal" scope="request" type="com.myapp.struts.EliminarSucursalAction" validate="false">
+            <forward name="success" path="/ListarSucursal.do"/>
         </action>
         
         <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction"/>
