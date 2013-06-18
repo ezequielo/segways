@@ -38,7 +38,9 @@
             <forward name="success" path="/WEB-INF/menuCliente.jsp"/>
             <forward name="failure" path="/login.jsp"/>
         </action>
-        <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction"/>
+        <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction">
+            <forward name="success" path="/login.jsp"/>
+        </action>
         <action path="/Welcome" forward="/login.jsp"/>
     </action-mappings>
     

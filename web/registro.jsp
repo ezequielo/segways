@@ -16,7 +16,8 @@
     </head>
     <body>
         <h1>Crear cuenta</h1>
-        <html:form action="/Registro">
+        <html:form action="/RegistroAction" onsubmit="return(validateRegistroForm(this));">
+            <html:javascript formName="RegistroForm" />
             <table>
                 <tr><td><html:errors></html:errors></td></tr>
                 <tr><td><label>Nombre</label></td></tr><tr><td><html:text property="nombre"/></td></tr>

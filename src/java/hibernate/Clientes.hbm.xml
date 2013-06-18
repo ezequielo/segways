@@ -12,7 +12,7 @@
             <column name="pk_usuario" not-null="true" />
         </many-to-one>
         <many-to-one name="sucursales" class="hibernate.Sucursales" fetch="select">
-            <column name="pk_sucursal" not-null="true" />
+            <column name="pk_sucursal" not-null="false" />
         </many-to-one>
         <property name="nombre" type="string">
             <column name="nombre" length="45" not-null="true" />

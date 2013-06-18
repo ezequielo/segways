@@ -34,6 +34,59 @@
                 
             </field>
         </form>
+        
+        <form name="RegistroForm">
+            <field
+                property="nombre" depends="required">
+                <arg key="reg.error.nombre"/>
+            </field>
+            
+            <field
+                property="apellido_1" depends="required">
+                <arg key="reg.error.apellido1"/>
+            </field>
+            
+            <field
+                property="email" depends="required">
+                <arg key="reg.error.email"/>
+            </field>
+            
+            <field
+                property="identidad" depends="required">
+                <arg key="reg.error.dni"/>
+            </field>
+            
+            <field
+                property="direccion" depends="required">
+                <arg key="reg.error.direccion"/>
+            </field>
+            
+            <field
+                property="localidad" depends="required">
+                <arg key="reg.error.localidad"/>
+            </field>
+            
+            <field
+                property="provincia" depends="required">
+                <arg key="reg.error.provincia"/>
+            </field>
+            
+            <field
+                property="cp" depends="required">
+                <arg key="reg.error.cp"/>
+            </field>
+            
+            <field
+                property="telefono" depends="required">
+                <arg key="reg.error.telefono"/>
+            </field>
+            
+            <field
+                property="pais" depends="required">
+                <arg key="reg.error.pais"/>
+            </field>
+        </form>
+            
     </formset>
 
 </form-validation>
