@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.myapp.struts;
 
 import hibernate.Usuarios;
@@ -11,50 +8,28 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-//import util.Mail;
 
-/**
- *
- * @author Carlos
- */
 public class LoginAction extends org.apache.struts.action.Action {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS_CLIENTE = "successCliente";
-    private static final String SUCCESS_PERSONAL = "successPersonal";
+    private static final String SUCCESS = "success";
     private static final String FAILURE = "failure";
-
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
+    
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-
-        LoginForm formulario = (LoginForm) form;
-
-        UsuariosDAO usuarioDAO = new UsuariosDAO();
-        Usuarios usuario = usuarioDAO.get(formulario.getUsuario());
-        if (usuario == null || !usuario.getPassword().equals(formulario.getPassword())) {
-            formulario.setMessage("Identificación incorrecta");
+        
+        LoginForm f = (LoginForm)form;
+        UsuariosDAO dao = new UsuariosDAO ();
+        
+        Usuarios usuario = dao.get(f.getUsuario(), f.getPassword());
+        
+        if(usuario == null){
+            request.setAttribute("msg", "El usuario y/o la clave son incorrectas");
             return mapping.findForward(FAILURE);
         }
-
-        //Mail.enviarMail("ezequielra1@gmail.com", "holaa", "que talll");
-        if (usuario.getPerfil().equals("admin")) {
-            return mapping.findForward(SUCCESS_PERSONAL);
-        } else if (usuario.getPerfil().equals("cliente")) {
-            return mapping.findForward(SUCCESS_CLIENTE);
-        }
-        return mapping.findForward(FAILURE);
-
+        else
+            return mapping.findForward(SUCCESS);
+        
     }
 }

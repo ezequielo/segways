@@ -23,12 +23,10 @@ public class UsuariosDAO {
         hSession.getTransaction().commit();
         return usuarios;
     }
-    /**
-     * @param usuario Buscar por el nombre de usuario
-     */
-    public Usuarios get(String usuario) {
+    
+    public Usuarios get(String usuario, String password) {
         hSession.clear();
-        Query q = hSession.createQuery("from Usuarios where usuario='"+usuario+"'");
+        Query q = hSession.createQuery("from Usuarios where usuario='"+usuario+"' and password='"+password+"' ");
         List<Usuarios> lista=q.list();
         if(!lista.isEmpty())
             return lista.get(0);

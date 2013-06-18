@@ -22,13 +22,14 @@
                 <tr><td><label>Nombre</label></td></tr><tr><td><html:text property="nombre"/></td></tr>
                 <tr><td><label>Apellidos</label></td></tr><tr><td><html:text property="apellido_1"/><html:text property="apellido_2"/></td></tr>
                 <tr><td><label>E-mail</label></td></tr><tr><td><html:text property="email"/></td></tr>
-                <tr><td><label>Identidad</label></td></tr><tr><td><html:text property="identidad"/></td></tr>
+                <tr><td><label>DNI</label></td></tr><tr><td><html:text property="identidad"/></td></tr>
                 <tr><td><label>Dirección</label></td></tr><tr><td><html:text property="direccion"/></td></tr>
                 <tr><td><label>Localidad</label></td></tr><tr><td><html:text property="localidad"/></td></tr>
                 <tr><td><label>Provincia</label></td></tr><tr><td><html:text property="provincia"/></td></tr>
                 <tr><td><label>C.P.</label></td></tr><tr><td><html:text property="cp"/></td></tr>
                 <tr><td><label>Teléfono</label></td></tr><tr><td><html:text property="telefono"/></td></tr>
-                <tr><td><label>País</label></td></tr><tr><td><html:text property="pais"/></td></tr>
+                <tr><td><label>País</label></td></tr><tr><td><html:text property="pais"/></td></tr> 
+                
                 <tr><td colspan="2"><html:submit value="Crear"/></td></tr>
             </table>
         </html:form>
