@@ -15,9 +15,11 @@
     <body>
         <h1>LOGIN</h1>
         <div id="login" class="login">
-            <html:form action="/Login">
+            <html:form action="/LoginAction">
+                <html:errors/>
+                <html:javascript/>
                 <table>
-                    <tr><td colspan="2"><bean:write name="LoginForm" property="message" /></td></tr>
+                    
                     <tr><td><label>Username:</label></td><td><html:text property="usuario"/></td></tr>
                     <tr><td><label>Password:</label></td><td><html:password property="password"/></td></tr>
                     <tr><td><br/></td></tr>
