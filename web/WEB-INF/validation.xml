@@ -70,5 +70,24 @@
         </form>
 
    </formset>
+   
+   <formset>
+       <form name="LoginForm">
+            <field
+                property="usuario"
+                depends="required">
+                    <arg key="error.usuario"/>
+            </field>
+            <field
+                property="password"
+                depends="required,mask">
+                    <arg key="error.clave"/>
+                    <var>
+                        <var-name>mask</var-name>
+                        <var-value>^[0-9a-zA-Z]*$</var-value>
+                    </var>
+            </field>
+        </form>
+   </formset>
 
 </form-validation>
