@@ -43,14 +43,13 @@
                             <td><bean:write name="listar" property="latitud" /></td>
                             <td><bean:write name="listar" property="longitud" /></td>
                             <td>
-                                <!html:form action="/ActualizarSucursal" >
-                                    <!html:image value="actualizar" src="./images/" />
-                                <!--<!/html:form>-->
+                                Actualizar
                             </td>
                             <td>
-                                <!html:form action="/EliminarSucursal" >
-                                    <!html:image value="eliminar" src="./images/" />
-                                <!--<!/html:form>-->
+                                <html:form action="/EliminarSucursal" >
+                                    <html:hidden name="listar" property="pkSucursal"></html:hidden>
+                                    <html:submit value="Eliminar"></html:submit>
+                                </html:form>
                             </td>
                         </tr>
                     </logic:iterate>

@@ -4,9 +4,7 @@
  */
 package hibernate;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -64,7 +62,7 @@ public class SucursalesDAO {
     } 
     public Sucursales get(Integer pkSucursal){
         hSession.clear();
-        Query q = hSession.createQuery("from Sucursales where pkSucursal=:pkSucursal");
+        Query q = hSession.createQuery("from Sucursales where pkSucursal='"+pkSucursal.toString()+"'");
         List<Sucursales> lista = q.list();
         if (!lista.isEmpty()) {
             return lista.get(0);
