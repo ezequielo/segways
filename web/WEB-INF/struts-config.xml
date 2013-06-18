@@ -52,6 +52,7 @@
         <action input="/" name="EliminarSucursalForm" path="/EliminarSucursal" scope="request" type="com.myapp.struts.EliminarSucursalAction" validate="false">
             <forward name="success" path="/ListarSucursal.do"/>
         </action>
+        <action path="/Listartarjeta" type="com.myapp.struts.ListarTarjetaAction"/>
         
         <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction"/>
         <action path="/Welcome" forward="/login.jsp"/>

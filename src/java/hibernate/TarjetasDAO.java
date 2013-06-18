@@ -40,9 +40,9 @@ public class TarjetasDAO {
         }
         return null;
     }
-    public List<Tarjetas> getList(){
+    public List<Tarjetas> getList(Integer pkCuenta){
         hSession.clear();
-        Query q = hSession.createQuery("from Tarjetas");
+        Query q = hSession.createQuery("from Tarjetas, Cuentas where Cuentas.pkCuenta=Tarjetas.pkTarketas and Cuentas.pkCuenta = '"+pkCuenta+"'");
         List<Tarjetas> lista = q.list();
         if (!lista.isEmpty()) {
             return lista;
