@@ -38,7 +38,10 @@
         <action path="/ListarSucursal" type="com.myapp.struts.ListarSucursalAction" validate="false" >
             <forward name="success" path="/WEB-INF/listarSucursal.jsp" redirect="false" />
         </action>
-        <action input="/login.jsp" name="LoginForm" path="/LoginAction" scope="request" type="com.myapp.struts.LoginAction"/>
+        <action input="/login.jsp" name="LoginForm" path="/LoginAction" scope="request" type="com.myapp.struts.LoginAction">
+            <forward name="success" path="/WEB-INF/menuCliente.jsp"/>
+            <forward name="failure" path="/login.jsp"/>
+        </action>
         <action path="/Welcome" forward="/login.jsp"/>
     </action-mappings>
     
