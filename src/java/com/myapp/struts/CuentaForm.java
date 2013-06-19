@@ -8,41 +8,41 @@ import org.apache.struts.action.ActionMessage;
 
 public class CuentaForm extends org.apache.struts.validator.ValidatorForm {
 
-    private String codEntidad;
-    private String codSucursal;
-    private String digito;
-    private String saldo;
+    private Integer codEntidad;
+    private Integer codSucursal;
+    private Integer digito;
+    private double saldo;
     private String tipoCuenta;
 
-    public String getCodEntidad() {
+    public Integer getCodEntidad() {
         return codEntidad;
     }
 
-    public void setCodEntidad(String codEntidad) {
+    public void setCodEntidad(Integer codEntidad) {
         this.codEntidad = codEntidad;
     }
 
-    public String getCodSucursal() {
+    public Integer getCodSucursal() {
         return codSucursal;
     }
 
-    public void setCodSucursal(String codSucursal) {
+    public void setCodSucursal(Integer codSucursal) {
         this.codSucursal = codSucursal;
     }
 
-    public String getDigito() {
+    public Integer getDigito() {
         return digito;
     }
 
-    public void setDigito(String digito) {
+    public void setDigito(Integer digito) {
         this.digito = digito;
     }
 
-    public String getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(String saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 

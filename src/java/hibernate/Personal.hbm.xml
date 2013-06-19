@@ -1,29 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-jun-2013 20:09:03 by Hibernate Tools 3.2.1.GA -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-jun-2013 14:01:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class catalog="banco" name="hibernate.Personal" table="personal">
-    <id name="pkPersonal" type="java.lang.Integer">
-      <column name="pk_personal"/>
-      <generator class="identity"/>
-    </id>
-    <many-to-one class="hibernate.Usuarios" fetch="select" name="usuarios">
-      <column name="pk_usuario" not-null="true"/>
-    </many-to-one>
-    <many-to-one class="hibernate.Sucursales" fetch="select" name="sucursales">
-      <column name="pk_sucursal" not-null="true"/>
-    </many-to-one>
-    <property name="nombre" type="string">
-      <column length="45" name="nombre" not-null="true"/>
-    </property>
-    <property name="ident" type="string">
-      <column length="45" name="ident" not-null="true"/>
-    </property>
-    <property name="apellido2" type="string">
-      <column length="45" name="apellido_2" not-null="true"/>
-    </property>
-    <property name="apellido1" type="string">
-      <column length="45" name="apellido_1" not-null="true"/>
-    </property>
-  </class>
+    <class name="hibernate.Personal" table="personal" catalog="banco">
+        <id name="pkPersonal" type="java.lang.Integer">
+            <column name="pk_personal" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuarios" class="hibernate.Usuarios" fetch="select">
+            <column name="pk_usuario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sucursales" class="hibernate.Sucursales" fetch="select">
+            <column name="pk_sucursal" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="ident" type="string">
+            <column name="ident" length="45" not-null="true" />
+        </property>
+        <property name="apellido2" type="string">
+            <column name="apellido_2" length="45" not-null="true" />
+        </property>
+        <property name="apellido1" type="string">
+            <column name="apellido_1" length="45" not-null="true" />
+        </property>
+    </class>
 </hibernate-mapping>

@@ -1,5 +1,5 @@
 package hibernate;
-// Generated 17-jun-2013 20:09:01 by Hibernate Tools 3.2.1.GA
+// Generated 19-jun-2013 14:01:36 by Hibernate Tools 3.2.1.GA
 
 
 

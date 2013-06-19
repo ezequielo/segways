@@ -12,7 +12,7 @@ public class CuentasDAO {
         this.hSession = HibernateUtil.getSessionFactory().openSession();
     }
 
-    public void create(String codigoEntidad, String codigoSucursal, String digitoControl, String saldo, String tipo) {
+    public void create(Integer codigoEntidad, Integer codigoSucursal, Integer digitoControl, double saldo, String tipo) {
         Cuentas cuenta = new Cuentas(codigoEntidad, codigoSucursal, digitoControl, saldo, tipo);
         this.hSession.beginTransaction();
         this.hSession.save(cuenta);
@@ -46,7 +46,7 @@ public class CuentasDAO {
         hSession.getTransaction().commit();
     }
 
-    public void update(Integer pkCuenta, String codigoEntidad, String codigoSucursal, String digitoControl, String saldo, String tipo) {
+    public void update(Integer pkCuenta, Integer codigoEntidad, Integer codigoSucursal, Integer digitoControl, double saldo, String tipo) {
         Cuentas cuenta = this.get(pkCuenta);
         cuenta.setCodigoEntidad(codigoEntidad);
         cuenta.setCodigoSucursal(codigoSucursal);

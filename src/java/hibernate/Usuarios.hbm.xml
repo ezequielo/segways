@@ -1,32 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-jun-2013 20:09:03 by Hibernate Tools 3.2.1.GA -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-jun-2013 14:01:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class catalog="banco" name="hibernate.Usuarios" table="usuarios">
-    <id name="pkUsuario" type="java.lang.Integer">
-      <column name="pk_usuario"/>
-      <generator class="identity"/>
-    </id>
-    <property name="usuario" type="string">
-      <column length="50" name="usuario" not-null="true"/>
-    </property>
-    <property name="password" type="string">
-      <column length="50" name="password" not-null="true"/>
-    </property>
-    <property name="perfil" type="string">
-      <column length="45" name="perfil" not-null="true"/>
-    </property>
-    <set inverse="true" name="personaleses">
-      <key>
-        <column name="pk_usuario" not-null="true"/>
-      </key>
-      <one-to-many class="hibernate.Personal"/>
-    </set>
-    <set inverse="true" name="clienteses">
-      <key>
-        <column name="pk_usuario" not-null="true"/>
-      </key>
-      <one-to-many class="hibernate.Clientes"/>
-    </set>
-  </class>
+    <class name="hibernate.Usuarios" table="usuarios" catalog="banco">
+        <id name="pkUsuario" type="java.lang.Integer">
+            <column name="pk_usuario" />
+            <generator class="identity" />
+        </id>
+        <property name="usuario" type="string">
+            <column name="usuario" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="50" not-null="true" />
+        </property>
+        <property name="perfil" type="string">
+            <column name="perfil" length="45" not-null="true" />
+        </property>
+        <set name="personals" inverse="true">
+            <key>
+                <column name="pk_usuario" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Personal" />
+        </set>
+        <set name="clienteses" inverse="true">
+            <key>
+                <column name="pk_usuario" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Clientes" />
+        </set>
+    </class>
 </hibernate-mapping>

@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-jun-2013 20:09:03 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 19-jun-2013 14:01:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="hibernate.Cuentas" table="cuentas" catalog="banco">
         <id name="pkCuenta" type="java.lang.Integer">
             <column name="pk_cuenta" />
             <generator class="identity" />
         </id>
-        <property name="codigoEntidad" type="string">
-            <column name="codigo_entidad" length="10" not-null="true" />
+        <property name="codigoEntidad" type="int">
+            <column name="codigo_entidad" not-null="true" />
         </property>
-        <property name="codigoSucursal" type="string">
-            <column name="codigo_sucursal" length="10" not-null="true" />
+        <property name="codigoSucursal" type="int">
+            <column name="codigo_sucursal" not-null="true" />
         </property>
-        <property name="digitoControl" type="string">
-            <column name="digito_control" length="10" not-null="true" />
+        <property name="digitoControl" type="int">
+            <column name="digito_control" not-null="true" />
         </property>
-        <property name="saldo" type="string">
-            <column name="saldo" length="10" not-null="false" />
+        <property name="saldo" type="double">
+            <column name="saldo" precision="22" scale="0" not-null="true" />
         </property>
         <property name="tipo" type="string">
             <column name="tipo" length="50" not-null="true" />

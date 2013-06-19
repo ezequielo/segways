@@ -1,5 +1,5 @@
 package hibernate;
-// Generated 17-jun-2013 20:09:01 by Hibernate Tools 3.2.1.GA
+// Generated 19-jun-2013 14:01:36 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -12,10 +12,10 @@ public class Cuentas  implements java.io.Serializable {
 
 
      private Integer pkCuenta;
-     private String codigoEntidad;
-     private String codigoSucursal;
-     private String digitoControl;
-     private String saldo;
+     private int codigoEntidad;
+     private int codigoSucursal;
+     private int digitoControl;
+     private double saldo;
      private String tipo;
      private Set seguroses = new HashSet(0);
      private Set domiciliacioneses = new HashSet(0);
@@ -28,14 +28,14 @@ public class Cuentas  implements java.io.Serializable {
     }
 
 	
-    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String saldo, String tipo) {
+    public Cuentas(int codigoEntidad, int codigoSucursal, int digitoControl, double saldo, String tipo) {
         this.codigoEntidad = codigoEntidad;
         this.codigoSucursal = codigoSucursal;
         this.digitoControl = digitoControl;
         this.saldo = saldo;
         this.tipo = tipo;
     }
-    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String saldo, String tipo, Set seguroses, Set domiciliacioneses, Set prestamoses, Set cuentasHasClienteses, Set tarjetases, Set movimientoses) {
+    public Cuentas(int codigoEntidad, int codigoSucursal, int digitoControl, double saldo, String tipo, Set seguroses, Set domiciliacioneses, Set prestamoses, Set cuentasHasClienteses, Set tarjetases, Set movimientoses) {
        this.codigoEntidad = codigoEntidad;
        this.codigoSucursal = codigoSucursal;
        this.digitoControl = digitoControl;
@@ -56,33 +56,32 @@ public class Cuentas  implements java.io.Serializable {
     public void setPkCuenta(Integer pkCuenta) {
         this.pkCuenta = pkCuenta;
     }
-    public String getCodigoEntidad() {
+    public int getCodigoEntidad() {
         return this.codigoEntidad;
     }
     
-    public void setCodigoEntidad(String codigoEntidad) {
+    public void setCodigoEntidad(int codigoEntidad) {
         this.codigoEntidad = codigoEntidad;
     }
-    public String getCodigoSucursal() {
+    public int getCodigoSucursal() {
         return this.codigoSucursal;
     }
     
-    public void setCodigoSucursal(String codigoSucursal) {
+    public void setCodigoSucursal(int codigoSucursal) {
         this.codigoSucursal = codigoSucursal;
     }
-    public String getDigitoControl() {
+    public int getDigitoControl() {
         return this.digitoControl;
     }
     
-    public void setDigitoControl(String digitoControl) {
+    public void setDigitoControl(int digitoControl) {
         this.digitoControl = digitoControl;
     }
-
-    public String getSaldo() {
+    public double getSaldo() {
         return this.saldo;
     }
     
-    public void setSaldo(String saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
     public String getTipo() {
