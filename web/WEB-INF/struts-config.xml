@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="PersonalPanelForm" type="com.myapp.struts.personal.PersonalPanelForm"/>
         <form-bean name="CuentaForm" type="com.myapp.struts.CuentaForm"/>
         <form-bean name="EliminarSucursalForm" type="com.myapp.struts.EliminarSucursalForm"/>
         <form-bean name="LoginPersonalForm" type="com.myapp.struts.LoginPersonalForm"/>
@@ -60,6 +61,16 @@
         
         <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction">
             <forward name="success" path="/WEB-INF/cearCuenta.jsp"/>
+        </action>
+        <action input="/WEB-INF/menuPersonal.jsp" name="PersonalPanelForm" path="/PersonalPanelAction" scope="request" type="com.myapp.struts.personal.PersonalPanelAction">
+            <forward name="cuentas" path="/WEB-INF/personalCuentasView.jsp"/>
+            <forward name="clientes" path="/WEB-INF/personalClientesView.jsp"/>
+            <forward name="tarjetas" path="/WEB-INF/personalTarjetasView.jsp"/>
+            <forward name="operar" path="/WEB-INF/personalOperarView.jsp"/>
+            <forward name="sucursales" path="/WEB-INF/personalSucursalesView.jsp"/>
+            <forward name="seguros" path="/WEB-INF/personalSegurosView.jsp"/>
+            <forward name="domiciliaciones" path="/WEB-INF/personalDomiciliacionesView.jsp"/>
+            <forward name="prestamos" path="/WEB-INF/personalPrestamosView.jsp"/>
         </action>
         <action path="/Welcome" forward="/login.jsp"/>
     </action-mappings>

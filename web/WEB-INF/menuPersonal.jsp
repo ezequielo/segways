@@ -14,17 +14,54 @@
 
         <div>
             <ul>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-                <li><html:link action="/GestionSucursal"><img src="images/Bank_Icon_256.png"></html:link></li>
-               
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="clientes"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="cuentas"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="tarjetas"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="operar"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="domiciliaciones"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="sucursales"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="seguros"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
+                <li>
+                    <html:form action="/PersonalPanelAction" >
+                        <html:hidden property="opcion" value="prestamos"/>
+                        <html:image src="images/Bank_Icon_256.png" styleClass="button"  value="enviar"/>
+                    </html:form>
+                </li>
             </ul>
         </div>
     </body>
