@@ -18,6 +18,7 @@
     </global-exceptions>
 
     <global-forwards>
+        <forward name="aaaaaaa" path="/SDF"/>
         <forward name="welcome"  path="/Welcome.do"/>
     </global-forwards>
 
