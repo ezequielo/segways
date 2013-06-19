@@ -99,6 +99,29 @@
                 
             </field>
         </form>
+    
+    
+        <form name="CuentaForm">
+            <field
+                property="codEntidad" depends="required">
+                <arg key="cuenta.error.entidad"/>
+            </field>
+            
+            <field
+                property="codSucursal" depends="required">
+                <arg key="cuenta.error.sucursal"/>
+            </field>
+            <field
+                property="digito" depends="required">
+                <arg key="cuenta.error.digito"/>
+            </field>
+            <field
+                property="tipoCuenta" depends="required">
+                <arg key="cuenta.error.tipo"/>
+            </field>
+        
+        </form>
+    
     </formset>
 
 </form-validation>

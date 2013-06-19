@@ -15,7 +15,6 @@ public class Cuentas  implements java.io.Serializable {
      private String codigoEntidad;
      private String codigoSucursal;
      private String digitoControl;
-     private String numeroCuenta;
      private String saldo;
      private String tipo;
      private Set seguroses = new HashSet(0);
@@ -29,19 +28,17 @@ public class Cuentas  implements java.io.Serializable {
     }
 
 	
-    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String numeroCuenta, String saldo, String tipo) {
+    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String saldo, String tipo) {
         this.codigoEntidad = codigoEntidad;
         this.codigoSucursal = codigoSucursal;
         this.digitoControl = digitoControl;
-        this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
         this.tipo = tipo;
     }
-    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String numeroCuenta, String saldo, String tipo, Set seguroses, Set domiciliacioneses, Set prestamoses, Set cuentasHasClienteses, Set tarjetases, Set movimientoses) {
+    public Cuentas(String codigoEntidad, String codigoSucursal, String digitoControl, String saldo, String tipo, Set seguroses, Set domiciliacioneses, Set prestamoses, Set cuentasHasClienteses, Set tarjetases, Set movimientoses) {
        this.codigoEntidad = codigoEntidad;
        this.codigoSucursal = codigoSucursal;
        this.digitoControl = digitoControl;
-       this.numeroCuenta = numeroCuenta;
        this.saldo = saldo;
        this.tipo = tipo;
        this.seguroses = seguroses;
@@ -80,13 +77,7 @@ public class Cuentas  implements java.io.Serializable {
     public void setDigitoControl(String digitoControl) {
         this.digitoControl = digitoControl;
     }
-    public String getNumeroCuenta() {
-        return this.numeroCuenta;
-    }
-    
-    public void setNumeroCuenta(String numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
+
     public String getSaldo() {
         return this.saldo;
     }
