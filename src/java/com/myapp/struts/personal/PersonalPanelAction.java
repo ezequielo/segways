@@ -1,4 +1,3 @@
-
 package com.myapp.struts.personal;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,27 +21,28 @@ public class PersonalPanelAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
-        PersonalPanelForm f = (PersonalPanelForm)form;
-        
+
+        PersonalPanelForm f = (PersonalPanelForm) form;
+
         String opcion = f.getOpcion();
-        
-        if(opcion.equals("clientes"))
+
+        if (opcion.equals("clientes")) {
             return mapping.findForward(CLIENTES);
-        else if (opcion.equals("cuentas"))
+        } else if (opcion.equals("cuentas")) {
             return mapping.findForward(CUENTAS);
-        else if (opcion.equals("tarjetas"))
+        } else if (opcion.equals("tarjetas")) {
             return mapping.findForward(TARJETAS);
-        else if (opcion.equals("oeprar"))
+        } else if (opcion.equals("operar")) {
             return mapping.findForward(OPERAR);
-        else if (opcion.equals("domiciliaciones"))
+        } else if (opcion.equals("domiciliaciones")) {
             return mapping.findForward(DOMICILIACIONES);
-        else if (opcion.equals("sucursales"))
+        } else if (opcion.equals("sucursales")) {
             return mapping.findForward(SUCURSALES);
-        else if (opcion.equals("seguros"))
+        } else if (opcion.equals("seguros")) {
             return mapping.findForward(SEGUROS);
-        else
+        } else {
             return mapping.findForward(PRESTAMOS);
-        
+        }
+
     }
 }
