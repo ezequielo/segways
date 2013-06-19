@@ -1,5 +1,5 @@
 package hibernate;
-// Generated 17-jun-2013 20:09:01 by Hibernate Tools 3.2.1.GA
+// Generated 19-jun-2013 14:01:36 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -15,7 +15,7 @@ public class Usuarios  implements java.io.Serializable {
      private String usuario;
      private String password;
      private String perfil;
-     private Set personaleses = new HashSet(0);
+     private Set personals = new HashSet(0);
      private Set clienteses = new HashSet(0);
 
     public Usuarios() {
@@ -27,11 +27,11 @@ public class Usuarios  implements java.io.Serializable {
         this.password = password;
         this.perfil = perfil;
     }
-    public Usuarios(String usuario, String password, String perfil, Set personaleses, Set clienteses) {
+    public Usuarios(String usuario, String password, String perfil, Set personals, Set clienteses) {
        this.usuario = usuario;
        this.password = password;
        this.perfil = perfil;
-       this.personaleses = personaleses;
+       this.personals = personals;
        this.clienteses = clienteses;
     }
    
@@ -63,12 +63,12 @@ public class Usuarios  implements java.io.Serializable {
     public void setPerfil(String perfil) {
         this.perfil = perfil;
     }
-    public Set getPersonaleses() {
-        return this.personaleses;
+    public Set getPersonals() {
+        return this.personals;
     }
     
-    public void setPersonaleses(Set personaleses) {
-        this.personaleses = personaleses;
+    public void setPersonals(Set personals) {
+        this.personals = personals;
     }
     public Set getClienteses() {
         return this.clienteses;

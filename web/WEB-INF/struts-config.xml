@@ -7,6 +7,9 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="PersonalPanelForm" type="com.myapp.struts.personal.PersonalPanelForm"/>
+        <form-bean name="CuentaForm" type="com.myapp.struts.CuentaForm"/>
+        <form-bean name="EliminarSucursalForm" type="com.myapp.struts.EliminarSucursalForm"/>
         <form-bean name="LoginPersonalForm" type="com.myapp.struts.LoginPersonalForm"/>
         <form-bean name="RegistroForm" type="com.myapp.struts.RegistroForm"/>
         <form-bean name="LoginForm" type="com.myapp.struts.LoginForm"/>
@@ -39,16 +42,36 @@
             <forward name="success" path="/WEB-INF/menuCliente.jsp"/>
             <forward name="failure" path="/login.jsp"/>
         </action>
-        <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction">
-            <forward name="success" path="/login.jsp"/>
-        </action>
+
    
         <action input="/loginPersonal.jsp" name="LoginPersonalForm" path="/LoginPersonal" scope="request" type="com.myapp.struts.LoginPersonalAction">
-            <forward name="success" path="/WEB-INF/menuPersonal.jsp"/>
+            <forward name="success" path="/WEB-INF/Personal/menuPersonal.jsp"/>
             <forward name="failure" path="/loginPersonal.jsp"/>
         </action>
         
-        <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction"/>
+        <action input="/" name="EliminarSucursalForm" path="/EliminarSucursal" scope="request" type="com.myapp.struts.EliminarSucursalAction" validate="false">
+            <forward name="success" path="/ListarSucursal.do"/>
+        </action>
+        <action input="/cearCuenta.jsp" name="CuentaForm" path="/CrearCuentaAction" scope="request" type="com.myapp.struts.CrearCuentaAction">
+            <forward name="success" path="/login.jsp"/>
+        </action>
+        
+        
+        <action path="/Listartarjeta" type="com.myapp.struts.ListarTarjetaAction"/>
+        
+        <action input="/registro.jsp" name="RegistroForm" path="/RegistroAction" scope="request" type="com.myapp.struts.RegistroAction">
+            <forward name="success" path="/WEB-INF/cearCuenta.jsp"/>
+        </action>
+        <action input="/WEB-INF/menuPersonal.jsp" name="PersonalPanelForm" path="/PersonalPanelAction" scope="request" type="com.myapp.struts.personal.PersonalPanelAction">
+            <forward name="cuentas" path="/WEB-INF/Personal/personalCuentasView.jsp"/>
+            <forward name="clientes" path="/WEB-INF/Personal/personalClientesView.jsp"/>
+            <forward name="tarjetas" path="/WEB-INF/Personal/personalTarjetasView.jsp"/>
+            <forward name="operar" path="/WEB-INF/Personal/personalOperarView.jsp"/>
+            <forward name="sucursales" path="/WEB-INF/Personal/personalSucursalesView.jsp"/>
+            <forward name="seguros" path="/WEB-INF/Personal/personalSegurosView.jsp"/>
+            <forward name="domiciliaciones" path="/WEB-INF/Personal/personalDomiciliacionesView.jsp"/>
+            <forward name="prestamos" path="/WEB-INF/Personal/personalPrestamosView.jsp"/>
+        </action>
         <action path="/Welcome" forward="/login.jsp"/>
     </action-mappings>
     

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 17-jun-2013 20:09:03 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 19-jun-2013 14:01:36 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="hibernate.Sucursales" table="sucursales" catalog="banco">
         <id name="pkSucursal" type="java.lang.Integer">
@@ -32,11 +32,11 @@
         <property name="latitud" type="string">
             <column name="latitud" length="45" not-null="true" />
         </property>
-        <set name="personaleses" inverse="true">
+        <set name="personals" inverse="true">
             <key>
                 <column name="pk_sucursal" not-null="true" />
             </key>
-            <one-to-many class="hibernate.Personales" />
+            <one-to-many class="hibernate.Personal" />
         </set>
         <set name="clienteses" inverse="true">
             <key>
