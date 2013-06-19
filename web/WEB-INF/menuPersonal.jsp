@@ -1,9 +1,3 @@
-<%-- 
-    Document   : menuPersonal
-    Created on : 13-jun-2013, 18:14:13
-    Author     : Carlos
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>

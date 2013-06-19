@@ -9,7 +9,7 @@
     <mapping resource="hibernate/Cuentas.hbm.xml"/>
     <mapping resource="hibernate/Tarjetas.hbm.xml"/>
     <mapping resource="hibernate/Usuarios.hbm.xml"/>
-    <mapping resource="hibernate/Personales.hbm.xml"/>
+    <mapping resource="hibernate/Personal.hbm.xml"/>
     <mapping resource="hibernate/Clientes.hbm.xml"/>
     <mapping resource="hibernate/Movimientos.hbm.xml"/>
     <mapping resource="hibernate/Sucursales.hbm.xml"/>

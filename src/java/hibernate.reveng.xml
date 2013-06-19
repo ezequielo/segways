@@ -5,7 +5,7 @@
   <table-filter match-name="seguros"/>
   <table-filter match-name="cuentas"/>
   <table-filter match-name="clientes"/>
-  <table-filter match-name="personales"/>
+  <table-filter match-name="personal"/>
   <table-filter match-name="movimientos"/>
   <table-filter match-name="tarjetas"/>
   <table-filter match-name="usuarios"/>
